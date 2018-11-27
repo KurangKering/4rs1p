@@ -68,7 +68,7 @@ class PermissionTableSeeder extends Seeder
         $user['username'] = 'admin';
         $user['name'] = 'admin';
         $user['email'] = 'admin@admin.com';
-        $user['active'] = '1';
+        $user['status'] = '2';
         $password = 'asd';
         $pass = ($password); //secret
         $user['password'] = bcrypt($password); //secret

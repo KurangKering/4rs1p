@@ -70,7 +70,7 @@ class LoginController extends Controller
                 return redirect()
                 ->back()
                 ->withInput($request->only($this->username(), 'remember'))
-                ->withErrors(['active' => 'Akun Belum Aktif']);
+                ->withErrors(['status' => 'Akun Belum Aktif']);
             }
             # code...
         }
