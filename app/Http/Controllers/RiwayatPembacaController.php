@@ -13,7 +13,7 @@ class RiwayatPembacaController extends Controller
      */
     public function index()
     {
-        $riwayats = RiwayatPembaca::get();
+        $riwayats = RiwayatPembaca::latest()->get();
         return view('riwayat_pembaca.index', compact('riwayats'));
     }
 

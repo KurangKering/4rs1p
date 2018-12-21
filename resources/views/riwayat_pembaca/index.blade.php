@@ -47,7 +47,9 @@
 
 @section('custom_js')
 <script>
-  let $tablePerkara = $("#table-perkara").DataTable();
+  let $tablePerkara = $("#table-perkara").DataTable({
+    order : [],
+  });
 
 
   function deletePerkara(id) {

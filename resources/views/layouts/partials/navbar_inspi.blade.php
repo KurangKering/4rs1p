@@ -40,7 +40,9 @@
             <li>
                 <a href="{{ route('perkara.index') }}"><i class="fa fa-circle-thin"></i> <span class="nav-label">Perkara</span></a>
             </li>
-            
+             <li>
+                <a href="{{ route('berkas_perkara.index') }}"><i class="fa fa-circle-thin"></i> <span class="nav-label">Berkas Perkara</span></a>
+            </li>
             <li>
                 <a href="{{ route('riwayat_pembaca.index') }}"><i class="fa fa-circle-thin"></i> <span class="nav-label">Riwayat Pembaca</span></a>
             </li>

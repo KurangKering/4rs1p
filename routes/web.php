@@ -44,9 +44,11 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::resource('perkara', 'PerkaraController');
 		Route::resource('riwayat_pembaca', 'RiwayatPembacaController');
 
-	});
+		
 
-	Route::group(['middleware' => ['role:Panitera']], function() {
+	});
+	Route::group(['middleware' => ['role:Panitera|Panitera Muda']], function() {
+
 		Route::post('berkas_perkara/read', [
 			'as' => 'berkas_perkara.read',
 			'uses' => 'BerkasPerkaraController@read',
@@ -59,9 +61,15 @@ Route::group(['middleware' => ['auth']], function() {
 			'as' => 'berkas_perkara.get_file',
 			'uses' => 'BerkasPerkaraController@get_file',
 		]);
-		Route::resource('berkas_perkara', 'BerkasPerkaraController');
 
+		Route::resource('berkas_perkara', 'BerkasPerkaraController');
+		
 	});
+	// Route::group(['middleware' => ['role:Panitera']], function() {
+		
+	// 	Route::resource('berkas_perkara', 'BerkasPerkaraController');
+
+	// });
 
 
 });
