@@ -68,16 +68,29 @@
       if (btn == 'Hapus') {
        axios.post('{{ route('jenis_perkara.index') }}'+ '/' + id, {
 
-          _method : 'DELETE',
-          _token : '{{ csrf_token() }}',
+        _method : 'DELETE',
+        _token : '{{ csrf_token() }}',
 
-       })
-       .then(resp => {
-        location.href = '{{ route('jenis_perkara.index') }}';
-       })
-      }
+      })
+       .then(response => {
+        resp = response.data;
+        if (!resp.success) {
+          swal({
+            icon : 'error',
+            title : 'Gagal Menghapus Data',
+            text : 'Jenis Perkara Sedang Digunakan !',
+            buttons : false,
+            closeOnClickOutside : false,
+            timer : 1500,
+          })
+        } else {
+         location.href = '{{ route('jenis_perkara.index') }}';
+       }
+       
+     })
+     }
 
-    });
+   });
   }
 </script>
 @endsection

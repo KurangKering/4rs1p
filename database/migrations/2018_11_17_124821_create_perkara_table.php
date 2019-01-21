@@ -18,6 +18,13 @@ class CreatePerkaraTable extends Migration
             $table->string('no_perkara');
             $table->unsignedInteger('jenis_perkara_id');
             $table->timestamps();
+
+
+            $table->foreign('jenis_perkara_id')
+            ->references('id')
+            ->on('jenis_perkara')
+            ->onDelete('cascade');
+
         });
     }
 

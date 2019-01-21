@@ -103,9 +103,11 @@ class JenisPerkaraController extends Controller
     public function destroy($id)
     {
         $jenis = JenisPerkara::findOrFail($id);
-        $jenis->delete();
+        if (count($jenis->perkara) > 0) {
+            return response()->json(['success' => false, 'msg' => 'Gagal']);
 
-       
+        }
+        $jenis->delete();
         return response()->json(['success' => true, 'msg' => 'Berhasil']);
 
     }

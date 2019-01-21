@@ -19,6 +19,13 @@ class CreateBerkasPerkaraTable extends Migration
             $table->string('nama');
             $table->text('file');
             $table->timestamps();
+
+
+
+            $table->foreign('perkara_id')
+            ->references('id')
+            ->on('perkara')
+            ->onDelete('cascade');
         });
     }
 
