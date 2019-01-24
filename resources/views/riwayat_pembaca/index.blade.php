@@ -30,8 +30,8 @@
               <tr>
                <td>{{ $no++ }}</td>
                <td>{{ $riwayat->nama_pembaca }}</td>
-               <td>{{ $riwayat->berkas_perkara->perkara->no_perkara }}</td>
-               <td>{{ $riwayat->berkas_perkara->nama }}</td>
+               <td>{{ $riwayat->no_perkara }}</td>
+               <td>{{ $riwayat->nama_berkas }}</td>
                <td>{{ indonesian_date($riwayat->tanggal, 'j F Y, H:i:s') }}</td>
                
             </tr>

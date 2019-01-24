@@ -9,8 +9,8 @@ use App\RiwayatPembaca;
 class BerkasPerkaraController extends Controller
 {
 
-   public function get_file($id)
-   {
+ public function get_file($id)
+ {
     $berkas = BerkasPerkara::findOrFail($id);
     $dirPath = 'berkas-perkara/';
     $fullPath = $dirPath. $berkas->file;
@@ -33,8 +33,10 @@ public function read(Request $request)
     if ($user) {
         $riwayat = RiwayatPembaca::create([
             'nama_pembaca' => $user->name,
-            'berkas_perkara_id' => $berkasID,
-            'user_id' => $user->id,
+            // 'berkas_perkara_id' => $berkasID,
+            'no_perkara' => $berkas->perkara->no_perkara,
+            'nama_berkas' => $berkas->nama,
+            // 'user_id' => $user->id,
             'tanggal' => now(),
         ]);
     }

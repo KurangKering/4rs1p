@@ -16,8 +16,11 @@ class CreateRiwayatPembacaTable extends Migration
         Schema::create('riwayat_pembaca', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_pembaca');
-            $table->unsignedInteger('berkas_perkara_id');
-            $table->unsignedInteger('user_id');
+            // $table->unsignedInteger('berkas_perkara_id');
+            $table->string('no_perkara');
+            $table->string('nama_berkas');
+            // $table->unsignedInteger('berkas_perkara_id');
+            // $table->unsignedInteger('user_id');
             $table->dateTime('tanggal');
             $table->timestamps();
         });
